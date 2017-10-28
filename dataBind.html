@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="UserInfoModule">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script src="form.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+     <div class="panel panel-primary">
+         <div class="panel-heading">
+             <div class="panel-title">双向数据绑定</div>
+         </div>
+         <div class="panel-body"  ng-controller="UserInfoCtrl">
+             <div class="row">
+                 <div class="col-md-12">
+                     <form  class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">
+                                邮箱：
+                            </label>
+                            <div class="col-md-10">
+                                <input type="email" class="form-control" placeholder="xxx@xxx.com" ng-model="userInfo.email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-md-2 control-label">
+                                密码：
+                            </label>
+                            <div class="col-md-10">
+                                <input type="password" class="form-control" placeholder="only includs num,alphat,_" ng-model="userInfo.password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md 10">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" ng-model="userInfo.autoLogin">自动登录
+                                    </label>
+                                </div>
+                            </div>  
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <but class="btn btn-default" ng-click="getFormData()">
+                                    获取表单的值
+                                </but>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <but class="btn btn-default" ng-click="setFormData()">
+                                    设置表单值
+                                </but>
+                            </div>
+                        </div>
+                     </form>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-md-12" >
+                     <div>{{userInfo.email}}</div>    
+                 </div>
+             </div>
+         </div>
+    </div>        
+
+      <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+      <script src="https://code.jquery.com/jquery.js"></script>
+      <!-- 包括所有已编译的插件 -->
+      <script src="js/bootstrap.min.js"></script>
+     
+</body>
+</html>
